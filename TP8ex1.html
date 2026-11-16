@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="formCommande" onsubmit="return VerifierCommande()">
+        <label for="adresse">Adresse de livraison :</label>
+        <input type="text" id="adresse" name="adresse"><br>
+        <label for="entree">Choisissez une entrée :</label>
+        <select id="entree" onchange="gererSelection('entree', 'nbEntree') ; afficherPanier()" >
+            <option value="0">Aucun</option>
+            <option value="8.5">Salade César (8.5 DT)</option>
+            <option value="4.0"> Brik à l'œuf (4.0 DT)</option>
+        </select><br>
+
+        <label for="nbEntree">Nombre de personnes :</label>
+        <input type="number" id="nbEntree" value="0" min="0" oninput="calculerPrix()"><br>
+        <label for="Plat">Choisissez un plat :</label>
+        <select id="Plat" onchange="gererSelection('Plat', 'nbPlat')">
+            <option value="0">Aucun</option>
+            <option value="18">Couscous Agneau (18 DT)</option>
+            <option value="15.4"> Scalope grillé (15.4 DT)</option>
+        </select><br>
+
+        <label for="nbPlat">Nombre de personnes :</label>
+        <input type="number" id="nbPlat" value="0" min="0" oninput="calculerPrix()"><br>
+        <label for="Desert">Choisissez un desert :</label>
+        <select id="Desert" onchange="gererSelection('Desert', 'nbDesert')">
+            <option value="0">Aucun</option>
+            <option value="6.5">Teramissu (6.5 DT)</option>
+            <option value="5"> Salade de fruits (5 DT)</option>
+        </select><br>
+
+        <label for="nbDesert">Nombre de personnes :</label>
+        <input type="number" id="nbDesert" value="0" min="0" oninput="calculerPrix()"><br>
+        <label for="total">Tarif total :</label>
+        <input type="text" id="total" value="0.00" disabled><br>
+        <button type="submit">Envoyer</button><br>
+        <div class="cart-section">
+        <h3>Mon Panier</h3>
+        <ul id="liste de panier"></ul>
+        <div class="cart-totals">
+            <p>Frais de livraison : <span id="affichage_livraison">0.00 DT</span></p>
+        </div>
+    </div>
+
+        
+    </form>
+
+    <script src="jstp8ex1.js"></script>
+</body>
+
+</html>
